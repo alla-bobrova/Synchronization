@@ -23,7 +23,7 @@ jobs:
       run: |
         echo "# Repository Tree" > README.md
         echo "" >> README.md
-        find . -type f ! -path './.github/*' ! -path './node_modules/*' ! -name 'README.md' | sed -e 's/^\.\///' | grep -vE '^[0-9a-f]{40}$|^FETCH_HEAD$|^HEAD$' | awk -F/ '{print $NF}' | sort | sed -e 's/^/├── /' >> README.md
+        find . -type f ! -path './.github/*' ! -path './node_modules/*' ! -name 'README.md' -exec sh -c 'echo "{}" | sed -e "s/^\.\///" | grep -vE "^[0-9a-f]{40}$|^FETCH_HEAD$|^HEAD$" | sed -e "s/^\//├── /"' \; | sort >> README.md
 
     - name: Display changes
       run: cat README.md
