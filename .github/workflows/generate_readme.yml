@@ -16,17 +16,20 @@ jobs:
     - name: Set up Git
       run: |
         git config --global user.name "alla-bobrova"
-        git config --global user.email "alla_bobrova.31@mail.ru"
+        git config --global user.email "your-email@example.com"
 
     - name: Generate tree
       run: |
         echo "# Repository Tree" > README.md
         echo "" >> README.md
-        tree -a -I '.github|node_modules' >> README.md
+        tree -a -I '.github|node_modules' >> README.md  # Исключите ненужные директории
 
-    - name: Commit and push changes
+    - name: Commit changes
       run: |
         git add README.md
         git commit -m "Generate README with repository tree"
-        git remote add origin_with_token https://alla-bobrova:${{ secrets.GH_TOKEN }}@github.com/alla-bobrova/Synchronization.git
-        git push origin_with_token main
+
+    - name: Push changes with token
+      run: |
+        git push https://alla-bobrova:${GH_TOKEN}@github.com/alla-bobrova/Synchronization.git HEAD:main
+        
