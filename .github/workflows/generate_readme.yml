@@ -33,4 +33,4 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
-        git push origin HEAD:main
+        git push https://alla-bobrova:${{ secrets.GH_TOKEN }}@github.com/alla-bobrova/Synchronization.git HEAD:main
