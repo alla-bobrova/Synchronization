@@ -3,7 +3,7 @@ name: Generate README
 on:
   push:
     branches:
-      - main  # Измените на вашу основную ветку
+      - main
 
 jobs:
   generate_readme:
@@ -13,6 +13,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Set up Git
+      run: |
+        git config --global user.name "alla-bobrova"
+        git config --global user.email "your-email@example.com"
+        git config --global credential.helper store
+
     - name: Generate tree
       run: |
         echo "# Repository Tree" > README.md
@@ -21,8 +27,7 @@ jobs:
 
     - name: Commit and push changes
       run: |
-        git config user.name "${{ github.actor }}"
-        git config user.email "${{ github.actor }}@users.noreply.github.com"
         git add README.md
         git commit -m "Generate README with repository tree"
-        git push
+        git remote add origin_with_token https://alla-bobrova:${{ secrets.GH_TOKEN }}@github.com/alla-bobrova/Synchronization.git
+        git push origin_with_token main
