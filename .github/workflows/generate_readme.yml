@@ -16,7 +16,7 @@ jobs:
     - name: Set up Git
       run: |
         git config --global user.name "alla-bobrova"
-        git config --global user.email "alla_bobrova.31@mail.ru"
+        git config --global user.email "your-email@example.com"
 
     - name: Generate tree
       run: |
