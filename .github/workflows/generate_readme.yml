@@ -30,5 +30,7 @@ jobs:
         git commit -m "Generate README with repository tree"
 
     - name: Push changes with token
+      env:
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         git push origin HEAD:main
