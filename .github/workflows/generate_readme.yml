@@ -16,7 +16,7 @@ jobs:
     - name: Set up Git
       run: |
         git config --global user.name "alla-bobrova"
-        git config --global user.email "your-email@example.com"
+        git config --global user.email "alla_bobrova.31@mail.ru"
 
     - name: Generate tree
       run: |
@@ -31,5 +31,4 @@ jobs:
 
     - name: Push changes with token
       run: |
-        git push https://alla-bobrova:${GH_TOKEN}@github.com/alla-bobrova/Synchronization.git HEAD:main
-        
+        git push origin HEAD:main
