@@ -20,14 +20,14 @@ jobs:
 
     - name: Generate tree
       run: |
+        echo "# Repository Tree" > README.md
         echo "" >> README.md
-        echo "## Updated Tree" >> README.md
-        tree -a -I '.github|node_modules' >> README.md  # Исключите ненужные директории
+        tree -a --dirsfirst -I '.github|node_modules|README.md' >> README.md
 
     - name: Commit changes
       run: |
         git add README.md
-        git commit -m "Update README with repository tree"
+        git diff --cached --quiet || git commit -m "Update README with repository tree"
 
     - name: Push changes with token
       env:
