@@ -23,14 +23,23 @@ jobs:
         echo "# Repository Tree" > README.md
         echo "" >> README.md
         tree -a --dirsfirst -I '.github|node_modules|README.md' >> README.md
+        cat README.md  # Показать содержимое README.md в консоли
 
-    - name: Commit changes
-      run: |
-        git add README.md
-        git diff --cached --quiet || git commit -m "Update README with repository tree"
+    - name: Upload README as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: README
+        path: README.md
 
-    - name: Push changes with token
-      env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      run: |
-        git push https://alla-bobrova:${{ secrets.GH_TOKEN }}@github.com/alla-bobrova/Synchronization.git HEAD:main
+  view_readme:
+    runs-on: ubuntu-latest
+    needs: generate_readme
+
+    steps:
+    - name: Download README artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: README
+
+    - name: Display README
+      run: cat README.md
