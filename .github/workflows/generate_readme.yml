@@ -1,0 +1,28 @@
+name: Generate README
+
+on:
+  push:
+    branches:
+      - main  # Измените на вашу основную ветку
+
+jobs:
+  generate_readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Generate tree
+      run: |
+        echo "# Repository Tree" > README.md
+        echo "" >> README.md
+        tree -a -I '.github|node_modules' >> README.md  # Исключите ненужные директории
+
+    - name: Commit and push changes
+      run: |
+        git config user.name "${{ github.actor }}"
+        git config user.email "${{ github.actor }}@users.noreply.github.com"
+        git add README.md
+        git commit -m "Generate README with repository tree"
+        git push
