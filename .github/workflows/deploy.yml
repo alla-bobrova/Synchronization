@@ -23,12 +23,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Run Streamlit app/github_page.py
-      run: streamlit run app/github_page.py
+    - name: Build and deploy
+      run: streamlit build app/github_page.py --output build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./app
-
