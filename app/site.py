@@ -11,6 +11,7 @@ import streamlit as st
 def main():
     st.title("Synchronization")
 
+    st.title("Содержание:")
     st.markdown("## R - one-dimensional array.ipynb")
     st.write("Моделирование уравнения фаз глобально связанных осцилляторов Ван дер Поля. Связи между осцилляторами заданы одномерным массивом.")
 
