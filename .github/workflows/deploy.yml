@@ -22,7 +22,7 @@ jobs:
       working-directory: ${{ github.workspace }}
       run: |
         python -m pip install --upgrade pip
-        python -m pip install -r ${{ github.workspace }}/alla-bobrova/Synchronization/requirements.txt
+        python -m pip install -r ${{ github.workspace }}/requirements.txt
 
     - name: Run Streamlit app
       run: streamlit run app/github_page.py
