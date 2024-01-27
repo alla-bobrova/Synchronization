@@ -33,8 +33,11 @@ jobs:
     - name: Run Streamlit app
       run: |
         echo "Starting Streamlit app"
-        streamlit run app/github_page.py
+        streamlit run app/github_page.py > streamlit_logs.txt 2>&1
         echo "Streamlit app finished running"
+
+    - name: Show Streamlit logs
+      run: cat streamlit_logs.txt
 
     - name: After running Streamlit app
       run: echo "After running Streamlit app"
