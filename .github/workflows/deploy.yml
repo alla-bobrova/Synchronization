@@ -27,10 +27,14 @@ jobs:
     - name: Show contents of app directory
       run: ls -l ${{ github.workspace }}/app
 
+    - name: Before running Streamlit app
+      run: echo "Before running Streamlit app"
+
     - name: Run Streamlit app
-      run: |
-        streamlit run app/github_page.py
-        echo "Streamlit app finished running"
+      run: streamlit run app/github_page.py
+
+    - name: After running Streamlit app
+      run: echo "After running Streamlit app"
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
