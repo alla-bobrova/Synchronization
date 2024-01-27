@@ -31,7 +31,10 @@ jobs:
       run: echo "Before running Streamlit app"
 
     - name: Run Streamlit app
-      run: streamlit run app/github_page.py
+      run: |
+        echo "Starting Streamlit app"
+        streamlit run app/github_page.py
+        echo "Streamlit app finished running"
 
     - name: After running Streamlit app
       run: echo "After running Streamlit app"
