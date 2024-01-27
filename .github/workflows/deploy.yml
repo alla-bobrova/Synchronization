@@ -11,11 +11,39 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2.5.0  # Обновленная версия
+      uses: actions/checkout@v2.5.0
 
     - name: Setup Python
-      uses: actions/setup-python@v2.3.1  # Обновленная версия
+      uses: actions/setup-python@v2.3.1
       with:
         python-version: 3.8
 
-    # Остальные шаги вашего workflow...
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install -r requirements.txt
+
+    - name: Show contents of app directory
+      run: ls -l ${{ github.workspace }}/app
+
+    - name: Before running Streamlit app
+      run: echo "Before running Streamlit app"
+
+    - name: Run Streamlit app
+      run: |
+        echo "Starting Streamlit app"
+        streamlit run app/github_page.py > streamlit_logs.txt 2>&1
+        echo "Streamlit app finished running"
+
+    - name: Show Streamlit logs
+      run: cat streamlit_logs.txt
+
+    - name: After running Streamlit app
+      run: echo "After running Streamlit app"
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./app
