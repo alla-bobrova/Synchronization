@@ -1,4 +1,6 @@
 import subprocess
+import streamlit as st
+
 
 # Обновление pip
 subprocess.run(["pip", "install", "--upgrade", "pip"])
@@ -6,7 +8,7 @@ subprocess.run(["pip", "install", "--upgrade", "pip"])
 # Установка зависимостей из файла requirements.txt
 subprocess.run(["pip", "install", "-r", "requirements.txt"])
 
-import streamlit as st
+st.set_page_config(page_title="Synchrpnization", page_icon="🎓")
 
 def main():
     st.title("Synchronization")
