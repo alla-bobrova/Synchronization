@@ -1,6 +1,6 @@
 import subprocess
 import streamlit as st
-
+import emoji
 
 # Обновление pip
 subprocess.run(["pip", "install", "--upgrade", "pip"])
@@ -8,7 +8,7 @@ subprocess.run(["pip", "install", "--upgrade", "pip"])
 # Установка зависимостей из файла requirements.txt
 subprocess.run(["pip", "install", "-r", "requirements.txt"])
 
-st.set_page_config(page_title="Synchrpnization", page_icon=":mortar_board:")
+st.set_page_config(page_title="Synchronization", page_icon=emoji.emojize(":mortar_board:"))
 
 def main():
     st.title("Synchronization")
