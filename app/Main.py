@@ -1,6 +1,5 @@
 import subprocess
 import streamlit as st
-import Results
 
 # Обновление pip
 subprocess.run(["pip", "install", "--upgrade", "pip"])
@@ -34,4 +33,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    #st.sidebar.success("Pages")
