@@ -1,5 +1,6 @@
 import subprocess
 import streamlit as st
+import Resuls
 
 # Обновление pip
 subprocess.run(["pip", "install", "--upgrade", "pip"])
