@@ -7,6 +7,7 @@ st.sidebar.title("Resuls")
  
 st.title("Results")
 
+st.markdown('[Результаты эксперимента](https://drive.google.com/drive/folders/17DyaZ56omQ0tI5Y14N6ezqf6LX6c5djy?usp=drive_link)')
 
 # Список изображений
 images = ['app/icons/main_page.png', 'app/icons/phase_reduction.png', 'app/icons/results.png']
