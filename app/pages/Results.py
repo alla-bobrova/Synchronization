@@ -9,8 +9,14 @@ st.title("Results")
 
 st.markdown('[Результаты эксперимента](https://drive.google.com/drive/folders/17DyaZ56omQ0tI5Y14N6ezqf6LX6c5djy?usp=drive_link)')
 
+st.markdown(r'''
+$$
+\displaystyle\frac{\pi}{4} \, \text{-- притягивающая связь, синфазная синхронизация}
+$$
+''')
+
 # Список изображений
-images = ['app/icons/main_page.png', 'app/icons/phase_reduction.png', 'app/icons/results.png']
+images = ['exp1/pi_4/order_parametr/1.png', 'exp1/pi_4/phi(j)/1.png', 'exp1/pi_4/synch_circle/1.png', 'exp1/pi_4/spatiotemporal/1.png']
 
 # Переменная для отслеживания текущего индекса изображения
 current_index = st.session_state.get('current_index', 0)
