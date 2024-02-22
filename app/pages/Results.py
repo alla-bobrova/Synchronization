@@ -7,7 +7,7 @@ st.sidebar.title("Resuls")
  
 st.title("Results")
 
-st.markdown('[Результаты эксперимента](https://drive.google.com/drive/folders/17DyaZ56omQ0tI5Y14N6ezqf6LX6c5djy?usp=drive_link)')
+st.markdown('[Результаты эксперимента](https://github.com/alla-bobrova/Synchronization/tree/main/exp1)')
 
 st.markdown(r'''
 $$
