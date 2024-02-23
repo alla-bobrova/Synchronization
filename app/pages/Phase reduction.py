@@ -82,7 +82,41 @@ $$
 R_j = 2 + \epsilon \Big[-N + \frac{1}{2} \displaystyle\sum^N_{k=1}R_k^{(1)} \Big( \cos{(\phi_k-\phi_j)} +c_1\sin{(\phi_k-\phi_j)}  \Big)  \Big]
 $$
 
+Используем полученное разложение:
 
+$$
+ \phi^\prime_j=\Omega_j+\epsilon c_1N + \epsilon\sum_{k=1}^N\Big[  1+\displaystyle\frac{\epsilon}{2} (R_k^{(1)}-R_j^{(1)}) \Big] [\sin{(\phi_k-\phi_j)}-c_1\cos{(\phi_k-\phi_j)}]
+$$
+
+После некоторых преобразований:
+
+$$
+ \phi^\prime_j=\Omega_j+\epsilon c_1N + \epsilon\sum_{k=1}^N\Big[  1+\displaystyle\frac{\epsilon}{2} (R_k^{(1)}-R_j^{(1)}) \Big] d_1\sin{(\phi_k-\phi_j-\gamma)},
+$$
+
+где $d_1=\sqrt{1+c_1^2}$.
+
+Подставляя $R_j^{(1)}$ в выражение для $\phi^\prime_j$, после некоторых преобразований получаем:
+
+$$
+ \phi^\prime_j=\Omega_j+\epsilon N \Big( c_1 + d_1 Im \big[e^{-i\gamma}Z_1e^{-i\phi_j}\big]  \Big) + \displaystyle \frac{d_1\epsilon^2 N^2}{4} \Big( Im \big[ (1+c_1)e^{-i\gamma}Z_1^*Z_2e^{-i\phi_j} \big] + \\ + Im \big[ (1-ic_1)e^{-i\gamma}Z_1e^{-i\phi_j} \big] -  Im \big[ (1-ic_1)e^{-i\gamma}Z_1^2e^{-2i\phi_j} \big]   \Big),
+$$
+
+где
+
+$Z_1=Pe^{i\Psi}=\displaystyle\frac{1}{N}\sum_{k=1}^N e^{i\phi_k},$
+
+$Z_2=Qe^{i\Phi}=\displaystyle\frac{1}{N}\sum_{k=1}^N e^{2i\phi_k}.$
+
+Тогда:
+
+$$
+\phi^\prime_j = (\Omega_j+\epsilon c_1N) + \epsilon d_1NP\sin{(\Psi-\phi_j-\gamma)} + \displaystyle\frac{d_1\epsilon^2 N^2}{4} \Big( sgn(\beta)PQ\sin{(\Phi-\Psi-\phi_j)} - \\ - P\sin{(\Psi-\phi_j + \vartheta)} + P^2\sin{(2(\Psi-\phi_j)+\vartheta)} \Big),
+$$
+
+где
+
+$\vartheta = \arg\Big(  \displaystyle\frac{(\alpha+i\beta)^2}{\beta\sqrt{\alpha^2+\beta^2}}  \Big)$.
 ''')
 
 
