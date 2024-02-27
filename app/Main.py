@@ -16,6 +16,15 @@ def main():
     st.title("Synchronization")
 
     st.header("Содержание:")
+
+    st.markdown(r''' Модель:
+    $$
+    \begin{cases}
+    \dot{x}_j=y_j\\
+    \dot{y}_j=\mu (1-x_j^2)y_j - (1+\mu\Omega_j)x_j +\mu\alpha \displaystyle \sum^N_{k=1} {(x_k-x_j)} + \mu\beta\displaystyle \sum^N_{k=1} {(y_k-y_j)}
+    \end{cases}
+    $$
+    ''')
     st.subheader("R - one-dimensional array.ipynb")
     st.write("Моделирование уравнения фаз глобально связанных осцилляторов Ван дер Поля. Связи между осцилляторами заданы одномерным массивом.")
 
