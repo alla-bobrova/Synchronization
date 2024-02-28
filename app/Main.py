@@ -31,7 +31,7 @@ def main():
     st.subheader("R - matrix.ipynb")
     st.write("Моделирование уравнения фаз глобально связанных осцилляторов Ван дер Поля. Связи между осцилляторами заданы матрицей $N\\times N$, где $R_{ij}=0$ при $i=j$.")
 
-    st.subheader("Results")
+    st.subheader("exp1")
     st.write("Результаты для `R - matrix.ipynb` при единичных связях и значениях собственных частот совпадают с `R - one-dimensional array.ipynb`.")
 
 
