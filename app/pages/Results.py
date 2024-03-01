@@ -5,6 +5,7 @@ from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 from numba import jit
+import numba
 
 
 st.set_page_config(page_title="Results", page_icon=("app/icons/results.png"))
@@ -16,11 +17,11 @@ st.title("Results")
 st.markdown('[Результаты эксперимента](https://github.com/alla-bobrova/Synchronization/tree/main/exp1)')
 
 
-@jit(nopython=True)
+@jit(nopython=True, parallel=True)
 def system(phi, t, N, mu, omega, gamma, d, R):
     result = np.zeros_like(phi)
 
-    for j in range(N):
+    for j in numba.prange(N):
         sum_term = 0.0
         for k in range(N):
             if j != k:
