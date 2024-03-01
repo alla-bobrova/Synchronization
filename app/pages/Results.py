@@ -32,7 +32,7 @@ def system(phi, t, N, mu, omega, gamma, d, R):
     return result
 
 def plot():
-    st.subheader("Dynamic Visualization")
+    st.subheader("Visualization")
 
     # Parameters
     N = st.slider("Number of oscillators", min_value=1, max_value=256, value=128, step=1)
