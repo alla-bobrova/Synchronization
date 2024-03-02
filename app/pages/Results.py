@@ -32,7 +32,7 @@ def system(phi, t, N, mu, omega, gamma, d, R):
     return result
 
 def plot():
-    st.subheader("Visualization")
+    st.subheader("Parameters")
 
     # Parameters
     N = st.slider("Number of oscillators", min_value=1, max_value=256, value=128, step=1)
@@ -55,7 +55,7 @@ def plot():
     # отрицательные привели к [0, 2пи]
     solution[solution < 0] += 2*np.pi
 
-
+    st.subheader("Visualization")
     st.subheader("Финальные значения фаз осцилляторов")
     # Распределение осцилляторов на плоскости
     plt.plot(range(N), solution[-1,:], marker='o')
