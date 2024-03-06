@@ -91,20 +91,20 @@ def plot():
 
     st.subheader("Order parameter")
     # Построение графиков параметров порядка
-    R1 = np.abs(np.mean(np.exp(1j * solution[:, :]), axis=1))
-    R2 = np.abs(np.mean(np.exp(2j * solution[:, :]), axis=1))
+    S1 = np.abs(np.mean(np.exp(1j * solution[:, :]), axis=1))
+    S2 = np.abs(np.mean(np.exp(2j * solution[:, :]), axis=1))
 
     fig, ax = plt.subplots()
-    ax.plot(t_span, R1, label='R1')
-    ax.plot(t_span, R2, label='R2')
+    ax.plot(t_span, S1, label='S1')
+    ax.plot(t_span, S2, label='S2')
     ax.grid(True)
     ax.set_xlabel('Время')
     ax.set_ylabel('Значение')
     ax.legend()
     st.pyplot(fig)
-    st.write("Final values of R1 and R2:")
-    st.write(f"R1: {R1[-1]}")
-    st.write(f"R2: {R2[-1]}")
+    st.write("Final values of S1 and S2:")
+    st.write(f"S1: {S1[-1]}")
+    st.write(f"S2: {S2[-1]}")
 
 
     st.subheader("Пространственно-временная диаграмма")
