@@ -14,7 +14,7 @@ st.sidebar.title("Resuls")
  
 st.title("Results")
 
-st.markdown('[Результаты эксперимента](https://github.com/alla-bobrova/Synchronization/tree/main/exp1)')
+st.markdown('[Результаты эксперимента](https://drive.google.com/drive/folders/1UAUseGzko81S0hCgiIuUviUgSzKkpMp_?usp=drive_link)')
 
 
 @jit(nopython=True)
